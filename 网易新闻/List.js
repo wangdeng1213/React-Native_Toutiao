@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     justifyContent:'center',
   },
   list_item_font:{
-    fontSize:16,
+    fontSize:18,
   }
 });
 module.exports = List;
