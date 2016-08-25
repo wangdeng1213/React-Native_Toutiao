@@ -66,7 +66,9 @@ class Page_1 extends React.Component {
     render() {
         return (
             <View style={styles.flex}>
+              <View style={styles.container}>
                 <Header></Header>
+                <Image style={styles.pic} source={require('./img/1631.png')}/>
                 <Text style={styles.word}>
                 北京时间23日下午1时许，第73届雨果奖正式揭晓，中国作家刘慈欣凭借科幻小说《三体》获最佳长篇故事奖。本届雨果奖的长篇小说单元，刘慈欣的《三体》受小狗门事件影响，历经两进两出终获提名。
 
@@ -75,6 +77,8 @@ class Page_1 extends React.Component {
                 <TouchableOpacity onPress={this._pressButton.bind(this)}>
                     <Text style={styles.word}>返回</Text>
                 </TouchableOpacity>
+
+                </View>
             </View>
         );
     }
@@ -90,13 +94,16 @@ class Page_2 extends React.Component {
     render() {
         return (
             <View style={styles.flex}>
+              <View style={styles.container}>
                 <Header></Header>
+                <Image style={styles.pic} source={require('./img/1632.png')}/>
                 <Text style={styles.word}>
                   从1965年7月15日NASA向火星发射Mariner 4号探测器至今，NASA对火星的探索已整整过去50年。日前，NASA特此发布4分钟的短片纪念美国科研团队对这颗红色星球的50年征程，配以大气磅礴的背景乐，画面让观者泪目。
                 </Text>
                 <TouchableOpacity onPress={this._pressButton.bind(this)}>
                     <Text style={styles.word}>返回</Text>
                 </TouchableOpacity>
+              </View>
             </View>
         );
     }
@@ -112,13 +119,16 @@ class Page_3 extends React.Component {
     render() {
         return (
             <View style={styles.flex}>
+              <View style={styles.container}>
                 <Header></Header>
+                <Image style={styles.pic} source={require('./img/1633.png')}/>
                 <Text style={styles.word}>
                   酷似“阮经天”奇葩男给女友吃一周苦瓜亲爱的，我知道，其实你不容易。。不论男人女人，常常满身疲惫，却有卸不下的压力与责任。有时候，一肚子苦衷，也有不能说的时候亲爱的，我知道，其实你不容易。
                 </Text>
                 <TouchableOpacity onPress={this._pressButton.bind(this)}>
                     <Text style={styles.word}>返回</Text>
                 </TouchableOpacity>
+              </View>
             </View>
         );
     }
@@ -134,7 +144,9 @@ class Page_4 extends React.Component {
     render() {
         return (
             <View style={styles.flex}>
+              <View style={styles.container}>
                 <Header></Header>
+                <Image style={styles.pic} source={require('./img/1634.png')}/>
                 <Text style={styles.word}>
                 中新网8月23日电 据美媒报道，近日，一名10岁的小女孩在佛州海边游泳时突然遭到鲨鱼袭击，小女孩在上岸后发现自己的小伙伴还在海上，勇敢的她再次跳入水中，帮助小伙伴脱险。
 
@@ -143,6 +155,7 @@ class Page_4 extends React.Component {
                 <TouchableOpacity onPress={this._pressButton.bind(this)}>
                     <Text style={styles.word}>返回</Text>
                 </TouchableOpacity>
+              </View>
             </View>
         );
     }
@@ -187,6 +200,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+  },
+  pic:{
+    flex:1,
+    marginTop:10,
+    width:300,
+    height:200,
   },
   word: {
     margin:30,
