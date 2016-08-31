@@ -16,7 +16,7 @@
      TouchableOpacity
  } from 'react-native';
 
-var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
+var REQUEST_URL = 'http://v.juhe.cn/toutiao/index?type=top&key=613dac951345cf82dd522c280f9c5b1b';
 
 class zhouyanyu extends React.Component {
   constructor(props) {
@@ -29,7 +29,7 @@ class zhouyanyu extends React.Component {
       loaded: false,
     };
   }
-  componentDidMount(){//{ this.fetchData(); }生命周期函数，自动调用。
+  componentDidMount(){  //{ this.fetchData(); }生命周期函数，自动调用。
       fetch(REQUEST_URL)
       .then(
         (response) => response.json()//把网络上的数据进行json数据解析ß
@@ -39,7 +39,7 @@ class zhouyanyu extends React.Component {
         this.setState(
         {
           dataSource:
-          this.state.dataSource.cloneWithRows(responseData.movies),
+          this.state.dataSource.cloneWithRows(responseData.result.data),
           loaded:true,
         }
         )
@@ -52,15 +52,15 @@ class zhouyanyu extends React.Component {
         <View><Text style={styles.word}>请等待数据。。。</Text></View>
       );
     }
-    renderMovieView(movie){
+    renderMovieView(news){
       return (
         <View style={styles.container}>
          <View style={styles.container2}>
-             <Image style={styles.pic} source={{uri:movie.posters.thumbnail}}/>
+             <Image style={styles.pic} source={{uri:news.thumbnail_pic_s}}/>
          </View>
          <View style={styles.container3}>
-         <Text style={styles.word}>{movie.title}</Text>
-           <Text style={styles.word}>{movie.year}</Text>
+         <Text style={styles.word}>{news.title}</Text>
+           <Text style={styles.word}>{news.date}</Text>
          </View>
         </View>
       );
@@ -80,7 +80,7 @@ class zhouyanyu extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop:5,
+    marginTop:20,
     flex:1,
     flexDirection:'row',
     flexWrap:'wrap',
@@ -100,8 +100,8 @@ const styles = StyleSheet.create({
     height:100,
   },
   word:{
-    margin:10,
-    fontSize:20,
+    margin:5,
+    fontSize:15,
     textAlign:'center',
   }
 });
