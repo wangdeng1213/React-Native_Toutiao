@@ -20,11 +20,10 @@
 
 var REQUEST_URL = 'http://v.juhe.cn/toutiao/index?type=keji&key=613dac951345cf82dd522c280f9c5b1b';
 var Header = require('./Header');
-var Page = require('./Page');
 
 class HomePage extends Component{
-  PressMe (title){
-    this.props.navigator.push({name:'detail',index:title});
+  PressMe (title,title_2){
+    this.props.navigator.push({name:'detail',index:title,index_2:title_2});
   }
   constructor(props) {
     super(props);
@@ -60,7 +59,7 @@ class HomePage extends Component{
   }
   renderNewsView(news){
     return (
-      <TouchableOpacity  onPress={this.PressMe.bind(this,news.url)}>
+      <TouchableOpacity  onPress={this.PressMe.bind(this,news.url,news.author_name)}>
         <View style={styles.container}>
            <View style={styles.container2}>
                <Image style={styles.pic} source={{uri:news.thumbnail_pic_s}}/>
@@ -96,7 +95,6 @@ class DetailPage extends React.Component {
             <View style={styles.flex}>
               <Header></Header>
               <WebView url={this.props.index}/>
-              <Text style={styles.word}>{this.props.index}</Text>
               <Text onPress={()=>{this.props.navigator.pop();}} style={styles.word}>
                 返回
               </Text>
@@ -114,7 +112,7 @@ class zhouyanyu extends React.Component {
       case 'main':
         return(<HomePage navigator={navigator}></HomePage>);
       case 'detail':
-        return(<DetailPage navigator={navigator} index={route.index}></DetailPage>);
+        return(<DetailPage navigator={navigator} index={route.index} index_2={route.index_2}></DetailPage>);
       default:
     }
   }
