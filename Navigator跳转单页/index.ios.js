@@ -18,9 +18,6 @@ class FirstPage extends Component{
   PressMe(){
     this.props.navigator.push({name:'Second'});
   }
-  PressMe2(){
-    this.props.navigator.push({name:'Three'});
-  }
   render(){
     return(
       <View style={styles.container}>
