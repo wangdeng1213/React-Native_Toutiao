@@ -88,5 +88,6 @@ const styles = StyleSheet.create({
     margin:100,
   }
 });
+     
 
 AppRegistry.registerComponent('zhouyanyu', () => zhouyanyu);
